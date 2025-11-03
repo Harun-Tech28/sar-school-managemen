@@ -38,39 +38,44 @@ export const LoginPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-yellow-50 to-red-100 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         {/* Logo and Title */}
         <div className="text-center mb-8">
-          <div className="inline-block p-3 bg-white rounded-full shadow-lg mb-4">
-            <svg
-              className="w-12 h-12 text-primary-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-              />
-            </svg>
+          <div className="inline-block p-4 bg-white rounded-2xl shadow-2xl mb-6 border-4 border-red-600">
+            <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-yellow-500 rounded-xl flex items-center justify-center">
+              <svg
+                className="w-12 h-12 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-yellow-600 bg-clip-text text-transparent mb-2">
             SAR Educational Complex
           </h1>
-          <p className="text-gray-600">School Management System</p>
-          <p className="text-sm text-gray-500 mt-2">
-            Sepe Dote, Asokore Mampong District, Kumasi
+          <p className="text-gray-700 font-medium text-lg">School Management System</p>
+          <p className="text-sm text-gray-600 mt-2 font-medium">
+            📍 Sepe Dote, Asokore Mampong District, Kumasi
           </p>
         </div>
 
         {/* Login Form */}
-        <div className="bg-white rounded-lg shadow-xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Sign In
-          </h2>
+        <div className="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-red-600">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Welcome Back! 👋
+            </h2>
+            <p className="text-gray-600">Sign in to access your dashboard</p>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Field */}
@@ -86,7 +91,7 @@ export const LoginPage = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition"
                 placeholder="your.email@example.com"
                 disabled={loading}
                 autoComplete="email"
@@ -107,7 +112,7 @@ export const LoginPage = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition pr-10"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition pr-10"
                   placeholder="Enter your password"
                   disabled={loading}
                   autoComplete="current-password"
@@ -143,7 +148,7 @@ export const LoginPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary-600 text-white py-3 rounded-lg font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-red-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {loading ? (
                 <span className="flex items-center justify-center">
@@ -160,29 +165,39 @@ export const LoginPage = () => {
           </form>
 
           {/* Forgot Password & Register Links */}
-          <div className="mt-6 text-center space-y-2">
+          <div className="mt-6 text-center space-y-3">
             <button
               type="button"
-              className="text-sm text-primary-600 hover:text-primary-700 font-medium block w-full"
+              className="text-sm text-red-600 hover:text-red-700 font-semibold block w-full hover:underline"
               onClick={() => {
                 // TODO: Implement forgot password
                 alert('Password reset functionality will be implemented')
               }}
             >
-              Forgot your password?
+              🔒 Forgot your password?
             </button>
-            <div className="text-sm text-gray-600">
-              Don't have an account?{' '}
-              <Link to="/register" className="text-primary-600 hover:text-primary-700 font-medium">
-                Register here
+            <div className="pt-4 border-t border-gray-200">
+              <p className="text-sm text-gray-600 mb-2">
+                Don't have an account?
+              </p>
+              <Link 
+                to="/register" 
+                className="inline-block px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
+              >
+                ✨ Register Now
               </Link>
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>© 2024 SAR Educational Complex. All rights reserved.</p>
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-700 font-medium bg-white/50 backdrop-blur-sm rounded-xl py-3 px-4">
+            © 2024 SAR Educational Complex. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-600 mt-2">
+            🎓 Excellence in Education
+          </p>
         </div>
       </div>
     </div>
