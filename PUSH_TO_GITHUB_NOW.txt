@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════════════
+  COPY AND PASTE THESE COMMANDS TO PUSH TO GITHUB
+═══════════════════════════════════════════════════════════════
+
+STEP 1: First, create a repository on GitHub
+----------------------------------------
+1. Go to: https://github.com/new
+2. Repository name: sar-school-management
+3. Make it Private
+4. Click "Create repository"
+5. Come back here and continue
+
+
+STEP 2: Copy and paste these commands ONE BY ONE
+----------------------------------------
+
+git add .
+
+git commit -m "Initial commit - SAR School Management System with deployment configs"
+
+git remote add origin https://github.com/YOUR-USERNAME/sar-school-management.git
+
+git branch -M main
+
+git push -u origin main
+
+
+⚠️ IMPORTANT: Replace YOUR-USERNAME with your actual GitHub username!
+
+
+STEP 3: Deploy to Vercel
+----------------------------------------
+1. Go to: https://vercel.com
+2. Sign in with GitHub
+3. Click "Add New..." → "Project"
+4. Import "sar-school-management"
+5. Configure:
+   - Root Directory: apps/web
+   - Build Command: npm run build
+   - Output Directory: dist
+6. Add Environment Variables:
+   VITE_SUPABASE_URL = https://pwdkwhssrjuntbjqunco.supabase.co
+   VITE_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3ZGt3aHNzcmp1bnRianF1bmNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4NDA5MDcsImV4cCI6MjA3NzQxNjkwN30.cDSJDmrQRLYCZFddxOl8RVloQw5JZChVZMS3xEX7kFw
+7. Click "Deploy"
+8. Wait 2-3 minutes
+9. Done! 🎉
+
+
+═══════════════════════════════════════════════════════════════
+  That's it! Your app will be live on the internet!
+═══════════════════════════════════════════════════════════════
