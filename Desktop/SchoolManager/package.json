@@ -1,0 +1,17 @@
+{
+  "name": "sar-school-management",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "web": "npm run dev --workspace=apps/web",
+    "mobile": "npm run start --workspace=apps/mobile",
+    "install:all": "npm install && npm install --workspace=apps/web && npm install --workspace=apps/mobile"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
